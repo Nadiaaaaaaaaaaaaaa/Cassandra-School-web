@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const updateStatus = () => {
+                const today = new Date().toISOString().split('T')[0];
+                document.querySelectorAll('[data-date]').forEach(td => {
+                    if (td.getAttribute('data-date') <= today) {
+                        td.textContent = 'Done';
+                    }
+                });
+            };
+            updateStatus();
+        });
+    </script>
+</head>
+<body>
+    <div id="home" class="hero-section">
+        <h1>NADIA</h1>
+        <p>Welcome to your personalized student dashboard</p>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="item-icon">🌸</div>
+                <a href="#schedule">Schedule</a>
+                <button onclick="scrollToSection('schedule')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">📅</div>
+                <a href="#test-dates">Test Dates</a>
+                <button onclick="scrollToSection('test-dates')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">🎮</div>
+                <a href="#project-reports">Project Reports</a>
+                <button onclick="scrollToSection('project-reports')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">🚀</div>
+                <a href="#course-content">Course Content</a>
+                <button onclick="scrollToSection('course-content')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">🎮</div>
+                <a href="#deadlines">Deadlines</a>
+                <button onclick="scrollToSection('deadlines')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">⭐</div>
+                <a href="#goals">Goals</a>
+                <button onclick="scrollToSection('goals')">+</button>
+            </div>
+            <div class="grid-item">
+                <div class="item-icon">🌟</div>
+                <a href="#progress">Progress</a>
+                <button onclick="scrollToSection('progress')">+</button>
+            </div>
+        </div>
+    </div>
+
+    <button id="homeButton" onclick="scrollToSection('home')">Home</button>
+
+    <section id="schedule" class="content-section">
+        <h2>Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Module Name</th>
+                    <th>Test/Assignment</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="testDatesTable">
+                <tr>
+                    <td>Chemical Process Technology</td>
+                    <td>Test 1</td>
+                    <td>14 August 2024</td>
+                    <td data-date="2024-08-14"></td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>Test 1</td>
+                    <td>19 August 2024</td>
+                    <td data-date="2024-08-19"></td>
+                </tr>
+                <tr>
+                    <td>Chemical Engineering Fundamentals</td>
+                    <td>Test 1</td>
+                    <td>20 August 2024</td>
+                    <td data-date="2024-08-20"></td>
+                </tr>
+                <tr>
+                    <td>Engineering Communications Skills</td>
+                    <td>Assignment 1</td>
+                    <td>24 August 2024</td>
+                    <td data-date="2024-08-24"></td>
+                </tr>
+                <tr>
+                    <td>Mathematics 1B</td>
+                    <td>Test 1</td>
+                    <td>26 August 2024</td>
+                    <td data-date="2024-08-26"></td>
+                </tr>
+                <tr>
+                    <td>Drawing</td>
+                    <td>Test 1</td>
+                    <td>29 August 2024</td>
+                    <td data-date="2024-08-29"></td>
+                </tr>
+                <tr>
+                    <td>Chemical Engineering Fundamentals</td>
+                    <td>Test 2</td>
+                    <td>17 September 2024</td>
+                    <td data-date="2024-09-17"></td>
+                </tr>
+                <tr>
+                    <td>Chemical Process Technology 1B</td>
+                    <td>Test 2</td>
+                    <td>18 September 2024</td>
+                    <td data-date="2024-09-18"></td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>Test 2</td>
+                    <td>30 September 2024</td>
+                    <td data-date="2024-09-30"></td>
+                </tr>
+                <tr>
+                    <td>Mathematics 1B</td>
+                    <td>Test 2</td>
+                    <td>5 October 2024</td>
+                    <td data-date="2024-10-05"></td>
+                </tr>
+                <tr>
+                    <td>Chemical Engineering Fundamentals</td>
+                    <td>Test 3</td>
+                    <td>15 October 2024</td>
+                    <td data-date="2024-10-15"></td>
+                </tr>
+                <tr>
+                    <td>Chemical Process Technology 1B</td>
+                    <td>Test 3</td>
+                    <td>16 October 2024</td>
+                    <td data-date="2024-10-16"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="project-reports" class="content-section">
+        <h2>Project Reports</h2>
+        <p>Your project reports details go here.</p>
+    </section>
+
+    <section id="course-content" class="content-section">
+        <h2>Course Content</h2>
+        <p>Your course content details go here.</p>
+    </section>
+
+    <section id="deadlines" class="content-section">
+        <h2>Deadlines</h2>
+        <p>Your deadlines details go here.</p>
+    </section>
+
+    <section id="goals" class="content-section">
+        <h2>Goals</h2>
+        <ul>
+            <li>Mathematics 1B: +/- 70%</li>
+            <li>Chemistry: +/- 75%</li>
+            <li>Chemical Process Technology: +/- 75%</li>
+            <li>Engineering Communication Skills: +/- 80%</li>
+            <li>Chemical Engineering Fundamentals: +/- 70%</li>
+        </ul>
+    </section>
+
+    <section id="progress" class="content-section">
+        <h2>Progress</h2>
+        <div id="progress-board">
+            <h3>Progress Board</h3>
+            <div class="module">
+                <h4>Chemical Process Technology</h4>
+                <div class="test-dates">
+                    <div class="test">
+                        <p>Test 1: 14 August 2024</p>
+                        <input type="text" placeholder="Enter progress">
+                    </div>
+                    <!-- Add more tests/assignments as needed -->
+                </div>
+            </div>
+            <!-- Repeat module sections as needed -->
+        </div>
+    </section>
+
+    <section id="timetable" class="content-section">
+        <h2>Timetable</h2>
+        <div class="timetable">
+            <h3>Monday</h3>
+            <p>10:30-11:15 Venue 1105 Drawing</p>
+            <p>11:20-12:10 Venue G212 Chemical Process Technology</p>
+            <p>14:40-15:25 Venue Lwazi 106 Chemical Engineering Fundamentals</p>
+            <p>15:30-16:15 Venue Lwazi 106 Engineering Communications Skills</p>
+
+            <h3>Tuesday</h3>
+            <p>08:50-10:25 Venue G212 Chemical Engineering Fundamentals</p>
+            <p>12:10-13:45 Venue Lwazi 106 Engineering Communications Skills</p>
+            <p>13:50-14:40 Venue G212 Chemistry</p>
+
+            <h3>Wednesday</h3>
+            <p>08:00-09:40 Venue 1102 Engineering Mathematics</p>
+            <p>09:40-11:15 Venue G212 Chemical Process Technology</p>
+            <p>13:00-15:25 Venue QK LAB Chemistry</p>
+
+            <h3>Thursday</h3>
+            <p>08:00-09:40 Venue 1102 Engineering Mathematics</p>
+            <p>09:40-12:05 Venue 1105 Drawing</p>
+            <p>13:00-14:35 Venue G306 Chemistry</p>
+            <p>14:40-15:25 Venue G212 Engineering Mathematics</p>
+
+            <h3>Friday</h3>
+            <p>08:00-09:40 Venue G300 Chemistry</p>
+            <p>10:30-11:15 Venue G212 Chemical Process Technology</p>
+            <p>13:50-15:30 Venue Lwazi G06 Chemical Engineering Fundamentals</p>
+        </div>
+    </section>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
